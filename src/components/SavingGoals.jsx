@@ -1,5 +1,5 @@
 function SavingGoals({ savings }) {
-  console.log(savings);
+  
     return (
         <div className="bg-color-2 py-6 px-2">
             <div>

@@ -13,7 +13,7 @@ export default function ListItem({
         <div
             className="h-28 bg-color-3
     rounded flex justify-between overflow-hidden"
-        >
+        data-id={expenseDetails.id}>
             <div className="flex justify-between gap-1.5">
                 <div className="flex justtify-center itemzs-center gap-1.5">
                     <div className="w-2 h-full bg-color-9"></div>

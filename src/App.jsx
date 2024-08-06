@@ -5,11 +5,11 @@ import Expenses from "./components/ExpenseItems.jsx";
 import Summary from "./components/Summary.jsx";
 import BudgetPlanning from "./components/BudgetPlanning.jsx";
 import SavingGoals from "./components/SavingGoals.jsx";
-
 import "./App.css";
-
 import { datas, budgets, savings } from "./assets/data/data.js";
 import expenesArray from "./assets/data/DoughnutDatas.js";
+
+
 function App() {
     function formatCurrency(number) {
         return new Intl.NumberFormat("en-US", {
@@ -22,11 +22,8 @@ function App() {
     function handleFormSubmit(expenseObj) {
         setExpenses([...expenses, expenseObj]);
     }
-
-    useEffect(() => {}, [expenses]);
-
     return (
-        <div className="bg-color-1 flex flex-col">
+        <>
             <Header
                 data={datas}
                 expenses={expenses}
@@ -47,8 +44,8 @@ function App() {
                 budgets={budgets}
                 onCurrencyFormat={formatCurrency}
             />
-            <SavingGoals savings={savings}/>
-        </div>
+            <SavingGoals savings={savings} />
+        </>
     );
 }
 

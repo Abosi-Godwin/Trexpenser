@@ -8,7 +8,7 @@ export default function Input({
 }) {
     return (
         <>
-            <label htmlFor={label} className="text-color-8 capitalize">
+            <label htmlFor={label} className=" capitalize">
                 {" "}
                 {label}
             </label>

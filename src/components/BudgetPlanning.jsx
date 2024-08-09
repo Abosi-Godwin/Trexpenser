@@ -125,7 +125,7 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
                 </div>
                 <div
                     className="flex items-center justify-center py-2 grid
-                md:grid-cols-2 gap-4 w-full border-2 border-red-300"
+                md:grid-cols-2 gap-4 w-full"
                 >
                     <div className="bg-color-3 p-4 rounded w-full">
                         <h3 className="text-xl font-bold text-color-7">

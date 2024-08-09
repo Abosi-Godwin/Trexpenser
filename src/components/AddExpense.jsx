@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Button from "./Utilities/Button.jsx";
-import DateInput from "./Utilities/DateInput.jsx";
-import Input from "./Utilities/Input.jsx";
+import Button from "./Utilities/Inputs/Button.jsx";
+import DateInput from "./Utilities/Inputs/DateInput.jsx";
+import Input from "./Utilities/Inputs/Input.jsx";
+import Categories from "./Utilities/Inputs/Categories.jsx";
 
 const incomeCategories = [
     "Job",
@@ -103,8 +104,9 @@ function AddExpense({ expenses, onFormSubmit }) {
                             <option value="" disabled>
                                 Transaction type
                             </option>
-                            <option value="income">Income</option>
-                            <option value="expense">Expense</option>
+
+                            <Categories option="income" />
+                            <Categories option="expense" />
                         </select>
                     </div>
                     <div className="row w-50">
@@ -126,9 +128,8 @@ function AddExpense({ expenses, onFormSubmit }) {
                             {(expenseType === "income"
                                 ? incomeCategories
                                 : expenseCategories
-                            ).map((cat, ind) => {
-                                return <option key={ind}>{cat}</option>;
-                            })}
+                            ).map((cat, ind) => <Categories key={ind} option={cat} />
+                            )}
                         </select>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 import AddExpense from "../AddExpense.jsx";
 import { FaTimesCircle } from "react-icons/fa";
 import { useState } from "react";
-import Button from "./Button.jsx";
-import DateInput from "./DateInput.jsx";
-import Input from "./Input.jsx";
+import Button from "./Inputs/Button.jsx";
+import DateInput from "./Inputs/DateInput.jsx";
+import Input from "./Inputs/Input.jsx";
+import Categories from "./Inputs/Categories.jsx";
 
 const incomeCategories = [
     "Job",
@@ -33,9 +34,8 @@ const expenseCategories = [
     "Miscellaneous"
 ];
 
-function EditItemsForm({ data, onFormHide }) {
+function EditItemsForm({ data, onFormHide, onFormEditted }) {
     const openForm = data?.id;
-
     const [expenseType, setExpenseType] = useState(data.type);
     const [category, setCategory] = useState(data.category);
     const [description, setDescription] = useState(data.description);
@@ -68,9 +68,16 @@ function EditItemsForm({ data, onFormHide }) {
         ) {
             return;
         } else {
-            const newExpense = {};
-            // onFormSubmit(newExpense);
-            onFormHide()
+            const newExpense = {
+                id: data.id,
+                description,
+                amount,
+                date,
+                category,
+                type: expenseType
+            };
+            onFormEditted(newExpense);
+            onFormHide();
             setDescription("");
             setAmount("");
         }
@@ -83,7 +90,8 @@ function EditItemsForm({ data, onFormHide }) {
             >
                 <div
                     className="w-full h-fit flex items-center flex-col
-                justify-center gap-3 bg-color-6 text-color-2 p-2 rounded-md"
+                justify-center gap-3 bg-color-6 text-color-2 p-2 rounded-md
+                md:w-1/2"
                 >
                     <div className="w-full">
                         <h1
@@ -157,7 +165,10 @@ function EditItemsForm({ data, onFormHide }) {
                                             : expenseCategories
                                         ).map((cat, ind) => {
                                             return (
-                                                <option key={ind}>{cat}</option>
+                                                <Categories
+                                                    key={ind}
+                                                    option={cat}
+                                                />
                                             );
                                         })}
                                     </select>
@@ -199,9 +210,9 @@ function EditItemsForm({ data, onFormHide }) {
 
                                 <Button
                                     text="Add"
-                                    style="w-32 bg-color-4 uppercase p-3 rounded
-                                    text-color-8
-        hover:bg-color-8 hover:text-color-2 font-bold text-xl"
+                                    style="w-32 bg-color-8 uppercase p-3 rounded
+                                    text-color-4
+        hover:bg-color-4 hover:text-color-2 font-bold text-xl"
                                     onButtonClick={handleFormSubmit}
                                 />
                             </div>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Input from "./Input.jsx";
-import Button from "./Button.jsx";
-import DateInput from "./DateInput.jsx";
+import Input from "./Inputs/Input.jsx";
+import Button from "./Inputs/Button.jsx";
+import DateInput from "./Inputs/DateInput.jsx";
+import Categories from "./Inputs/Categories.jsx";
 import { Toaster, toast } from "alert";
 
 function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
@@ -103,13 +104,9 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
                                 <option value="" disabled>
                                     Select the category
                                 </option>
-                                {budgetCategories.map((option, index) => {
-                                    return (
-                                        <option key={index} id={index}>
-                                            {option}
-                                        </option>
-                                    );
-                                })}
+                                {budgetCategories.map((option, index) => (
+                                    <Categories option={option} key={index}/>
+                                ))}
                             </select>
                         </div>
                         <div>
@@ -171,7 +168,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
                             text="Save"
                             style="w-32 bg-color-6 uppercase p-2 rounded
                             text-color-2
-        hover:bg-color-8 hover:text-color-2 font-bold text-xl"
+        hover:bg-red-200 hover:text-color-2 font-bold text-xl"
                             onButtonClick={handleFormSave}
                         />
                     </div>

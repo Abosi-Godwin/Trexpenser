@@ -5,7 +5,8 @@ import EdithAndDelBtn from "./EdithAndDelBtn.jsx";
 export default function ListItem({
     expenseDetails,
     onCurrencyFormat,
-    onDataEdith
+    onDataEdith,
+    onDataDelete
 }) {
     const isIncome = expenseDetails.type === "income";
 
@@ -13,7 +14,8 @@ export default function ListItem({
         <div
             className="h-28 bg-color-3
     rounded flex justify-between overflow-hidden"
-        data-id={expenseDetails.id}>
+            data-id={expenseDetails.id}
+        >
             <div className="flex justify-between gap-1.5">
                 <div className="flex justtify-center itemzs-center gap-1.5">
                     <div className="w-2 h-full bg-color-9"></div>
@@ -59,7 +61,11 @@ export default function ListItem({
                     </div>
                 </div>
             </div>
-            <EdithAndDelBtn onDataEdith={onDataEdith} data={expenseDetails}/>
+            <EdithAndDelBtn
+                onDataEdith={onDataEdith}
+                onDataDelete={onDataDelete}
+                data={expenseDetails}
+            />
         </div>
     );
 }

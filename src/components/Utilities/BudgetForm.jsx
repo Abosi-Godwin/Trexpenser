@@ -6,6 +6,7 @@ import Categories from "./Inputs/Categories.jsx";
 import { Toaster, toast } from "alert";
 
 function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
+
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];
         setCurrentDate(currentDate);
@@ -105,7 +106,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
                                     Select the category
                                 </option>
                                 {budgetCategories.map((option, index) => (
-                                    <Categories option={option} key={index}/>
+                                    <Categories option={option} key={index} />
                                 ))}
                             </select>
                         </div>

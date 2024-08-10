@@ -5,7 +5,7 @@ import EdithAndDelBtn from "./EdithAndDelBtn.jsx";
 export default function ListItem({
     expenseDetails,
     onCurrencyFormat,
-    onDataEdith,
+    onDataEdit,
     onDataDelete
 }) {
     const isIncome = expenseDetails.type === "income";
@@ -62,7 +62,7 @@ export default function ListItem({
                 </div>
             </div>
             <EdithAndDelBtn
-                onDataEdith={onDataEdith}
+                onDataEdit={onDataEdit}
                 onDataDelete={onDataDelete}
                 data={expenseDetails}
             />

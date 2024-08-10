@@ -4,7 +4,7 @@ import { FaDeleteLeft } from "react-icons/fa6";
 import ProgressBar from "@ramonak/react-progress-bar";
 import EdithAndDelBtn from "./EdithAndDelBtn.jsx";
 
-function Budget({ budget, expenses, onCurrencyFormat }) {
+function Budget({ budget, expenses, onCurrencyFormat, onFormEditOpen,onFormDeleteOpen }) {
     const allExpenses = expenses.filter(
         expense => expense.category === budget.category
     );
@@ -28,7 +28,7 @@ function Budget({ budget, expenses, onCurrencyFormat }) {
             .map(data => data.amount)
             .reduce((acc, ini) => acc + ini, 0)
     );
-  
+
     const [spentPercent, setSpentPercent] = useState(
         (totalSpent / spendingLimit) * 100
     );
@@ -76,7 +76,8 @@ function Budget({ budget, expenses, onCurrencyFormat }) {
                     {budget.endDate.replace(/-/g, "/")}
                 </p>
             </div>
-            <EdithAndDelBtn />
+            <EdithAndDelBtn onDataEdit={onFormEditOpen}
+            onDataDelete={onFormDeleteOpen} data={budget} />
         </li>
     );
 }

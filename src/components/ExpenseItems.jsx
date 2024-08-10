@@ -6,15 +6,15 @@ import EditItemsForm from "./Utilities/EditItemsForm.jsx";
 import DeleteDataForm from "./Utilities/DeleteDataForm.jsx";
 export default function Expenses({ expenseItems, onCurrencyFormat }) {
     const [expenses, setExpenses] = useState([...expenseItems].reverse());
-    const [dataToEdith, setDataToEdith] = useState("");
+    const [dataToEdit, setDataToEdit] = useState("");
     const [dataToDelete, setDataToDelete] = useState("");
 
     function hideEditForm() {
-        setDataToEdith("");
+        setDataToEdit("");
     }
 
-    function handleDataEdith(data) {
-        setDataToEdith(data);
+    function handleDataEdit(data) {
+        setDataToEdit(data);
     }
     function handleDataEditted(data) {
         const index = expenses.findIndex(dt => dt.id === data.id);
@@ -32,19 +32,18 @@ export default function Expenses({ expenseItems, onCurrencyFormat }) {
     }
 
     function handleDataDeleted(data) {
-
         setExpenses(formalExpense =>
             expenses.filter(item => item.id != data.id)
         );
-        setDataToDelete("")
+        setDataToDelete("");
     }
 
     return (
         <div className="flex flex-col gap-2 pb-5">
             <ListItemsForm />
-            {dataToEdith && (
+            {dataToEdit && (
                 <EditItemsForm
-                    data={dataToEdith}
+                    data={dataToEdit}
                     onFormHide={hideEditForm}
                     onFormEditted={handleDataEditted}
                 />
@@ -64,7 +63,7 @@ export default function Expenses({ expenseItems, onCurrencyFormat }) {
                             expenseDetails={expense}
                             key={expense.id}
                             onCurrencyFormat={onCurrencyFormat}
-                            onDataEdith={handleDataEdith}
+                            onDataEdit={handleDataEdit}
                             onDataDelete={handleDataToDelete}
                         />
                     );

@@ -5,6 +5,8 @@ import { FaTimes } from "react-icons/fa";
 import { FaDeleteLeft } from "react-icons/fa6";
 import Budget from "./Utilities/Budget.jsx";
 import BudgetForm from "./Utilities/BudgetForm.jsx";
+import EditBudgetForm from "./Utilities/EditBudgetForm.jsx";
+import DeleteBudgetForm from "./Utilities/DeleteBudgetForm.jsx";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
@@ -43,6 +45,9 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
     const [spentPercent, setSpentPercent] = useState(
         (totalSpent / spendingLimit) * 100
     );
+
+    const [budgeTotEdit, setBudgetToEdit] = useState();
+    const [budgetToDelete, setBudgetToDelete] = useState();
     const handleBudgetData = budgetData => {
         setAllBudgets([...allBudgets, budgetData]);
     };
@@ -51,8 +56,28 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
         ...new Set(allExpenses.map(expense => expense.category))
     ];
     const [openForm, setOpenForm] = useState(false);
+
     function handleOpenForm() {
         setOpenForm(value => !value);
+    }
+    function handleOpenBudgetEditForm(data) {
+        setBudgetToEdit(data);
+    }
+    function handleOpenBudgetDelForm(data) {
+        setBudgetToDelete(data);
+    }
+    function handleBudgetEditClose() {
+        setBudgetToEdit("");
+    }
+    function handleBudgetDataEdit(data) {
+        console.log(data);
+    }
+    function handleBudgetDelClose() {
+        setBudgetToDelete("");
+    }
+    function handleBudgetDelete(data) {
+        console.log(data);
+        setBudgetToDelete("");
     }
     useEffect(() => {
         const newSpendingLimit = allBudgets
@@ -92,8 +117,24 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
                     Budget {<br />} Planning
                 </h2>
             </div>
-
-            <div className="budgetSummary w-full">
+            {budgeTotEdit && (
+                <EditBudgetForm
+                    data={budgeTotEdit}
+                    allBudgets={budgets}
+                    budgetCategories={budgetCategories}
+                    onFormClose={handleBudgetEditClose}
+                    onFormSubmit={handleBudgetDataEdit}
+                />
+            )}
+            {budgetToDelete && (
+                <DeleteBudgetForm
+                    data={budgetToDelete}
+                    onFormClose={handleBudgetDelClose}
+                    onFormDelete={handleBudgetDelete}
+                    onCurrencyFormat={onCurrencyFormat}
+                />
+            )}
+            <div className="w-full">
                 <div className="flex justify-between items-center gap-2">
                     <h2
                         className="uppercase text-xl font-bold capitalize
@@ -117,14 +158,16 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
         hover:bg-color-6 hover:text-color-2 font-extrabold"
                             onClick={handleOpenForm}
                         >
-                            {" "}
                             open
                             <FaPlus />
                         </button>
                     )}
                 </div>
+                <div className="flex items-center justify-center w-full py-3">
+                    <div className="h-0.5 w-full bg-color-3 rounded-md"></div>
+                </div>
                 <div
-                    className="flex items-center justify-center py-2 grid
+                    className="flex items-center justify-center py-4 grid
                 md:grid-cols-2 gap-4 w-full"
                 >
                     <div className="bg-color-3 p-4 rounded w-full">
@@ -166,6 +209,12 @@ function BudgetPlanning({ expenesArray, budgets, onCurrencyFormat }) {
                                                     key={budget.Id}
                                                     onCurrencyFormat={
                                                         onCurrencyFormat
+                                                    }
+                                                    onFormEditOpen={
+                                                        handleOpenBudgetEditForm
+                                                    }
+                                                    onFormDeleteOpen={
+                                                        handleOpenBudgetDelForm
                                                     }
                                                 />
                                             );

@@ -1,11 +1,9 @@
 import Button from "./Inputs/Button.jsx";
+import Modal from "./Modal.jsx"
 
 function DeleteDataForm({ data, onFormHide, onFormDeleted, onCurrencyFormat }) {
     return (
-        <div
-            className="w-screen h-screen bg-color-3 fixed top-0 left-0
-            border px-4 flex justify-center items-center"
-        >
+        <Modal>
             <div
                 className="w-full h-fit flex items-center flex-col
                 justify-center gap-3 bg-color-6 text-color-2 p-3 rounded-md
@@ -37,7 +35,7 @@ function DeleteDataForm({ data, onFormHide, onFormDeleted, onCurrencyFormat }) {
                     />
                 </div>
             </div>
-        </div>
+        </Modal>
     );
 }
 export default DeleteDataForm;

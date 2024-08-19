@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 
 const DateInput = ({
-    date,
+    date = "",
+    label,
     maxDate,
     minDate,
     setDate,
     style = "",
-    onHandleDateChange
+    onHandleInputChange
 }) => {
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];
@@ -14,15 +15,18 @@ const DateInput = ({
     }, []);
 
     return (
-        <input
-            type="date"
-            id="date-input"
-            value={date}
-            onChange={onHandleDateChange}
-            max={maxDate}
-            min={minDate}
-            className={style}
-        />
+        <>
+            <label htmlFor="date-input">{label}</label>
+            <input
+                type="date"
+                id="date-input"
+                value={date}
+                max={maxDate}
+                min={minDate}
+                className={style}
+                onChange={e => onHandleInputChange(e.target.value, setDate)}
+            />
+        </>
     );
 };
 

@@ -1,6 +1,6 @@
 function Categories({ option }) {
     return (
-        <option value={option} className="capitalize uppercase">
+        <option value={option}>
             {option}
         </option>
     );

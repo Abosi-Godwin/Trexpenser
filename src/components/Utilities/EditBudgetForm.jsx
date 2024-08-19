@@ -3,6 +3,7 @@ import Input from "./Inputs/Input.jsx";
 import Button from "./Inputs/Button.jsx";
 import DateInput from "./Inputs/DateInput.jsx";
 import Categories from "./Inputs/Categories.jsx";
+import Modal from "./Modal.jsx";
 import { Toaster, toast } from "alert";
 
 function EditBudgetForm({
@@ -61,11 +62,9 @@ function EditBudgetForm({
         onFormSubmit(budgetData);
         onFormClose();
     }
-    return (
-        <div
-            className="w-screen h-screen bg-color-3 fixed top-0 left-0
-            border px-4 flex justify-center items-center"
-        >
+    return ( 
+            <Modal>
+              
             <div
                 className="p-2 bg-color-8 rounded
     text-color-3 w-full md:w-1/2 md:p-4"
@@ -177,7 +176,7 @@ function EditBudgetForm({
                     </form>
                 </div>
             </div>
-        </div>
+        </Modal>
     );
 }
 

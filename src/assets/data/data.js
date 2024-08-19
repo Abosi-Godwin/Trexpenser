@@ -272,25 +272,45 @@ export const budgets = [
         Id: 0
     }
 ];
-
-export const savings = [
+export const savingsGoals = [
     {
         id: 1,
-        goalName: "Emergency Fund",
-        targetAmount: 1000.0,
-        savedAmount: 600.0,
-        startDate: "2024-06-01",
-        targetDate: "2024-12-01",
-        category: "Emergency",
-        notes: "Savings for unexpected expenses."
-    },{
-  "id": 2,
-  "goalName": "Vacation",
-  "targetAmount": 2000.0,
-  "savedAmount": 1200.0,
-  "startDate": "2024-05-01",
-  "targetDate": "2024-09-01",
-  "category": "Leisure",
-  "notes": "Saving for a trip to Hawaii."
-}
+        name: "Emergency Fund",
+        targetAmount: 3000.0,
+        currentAmount: 500.0,
+        savingsType: "manual",
+        startDate: "2024-08-01",
+        endDate: "2025-08-01"
+    },
+    {
+        id: 2,
+        name: "Vacation Fund",
+        targetAmount: 2000.0,
+        currentAmount: 300.0,
+        savingsType: "automatic",
+        frequency: "monthly",
+        percentage: 5,
+        startDate: "2024-08-05",
+        endDate: "2024-12-01"
+    },
+    {
+        id: 3,
+        name: "Car Down Payment",
+        targetAmount: 5000.0,
+        currentAmount: 1000.0,
+        savingsType: "manual",
+        startDate: "2024-08-10",
+        endDate: "2025-05-01"
+    },
+    {
+        id: 4,
+        name: "Home Renovation",
+        targetAmount: 10000.0,
+        currentAmount: 5500.0,
+        savingsType: "automatic",
+        frequency: "bi-weekly",
+        percentage: 10,
+        startDate: "2024-08-15",
+        endDate: "2025-12-01"
+    }
 ];

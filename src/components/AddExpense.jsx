@@ -80,9 +80,11 @@ function AddExpense({ expenses, onFormSubmit }) {
     }
     return (
         <div className="bg-color-3 py-6 px-2 text-color-8">
+          
             <h1 className="text-2xl font-bold text-color-8">
                 Add a new transaction
             </h1>
+            
             <form
                 className="border-2 border-color-5 p-3 flex flex-col gap-3
             rounded mt-2.5"

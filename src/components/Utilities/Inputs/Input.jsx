@@ -1,10 +1,10 @@
 export default function Input({
-    max,
+    max = "",
     label = "",
     inputType,
-    placeholder,
-    initialValue,
-    onHandleInputChange
+    placeholder = "",
+    initialValue = "",
+    onHandleInputChange = ""
 }) {
     return (
         <>

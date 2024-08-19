@@ -5,10 +5,10 @@ import Expenses from "./components/ExpenseItems.jsx";
 import Summary from "./components/Summary.jsx";
 import BudgetPlanning from "./components/BudgetPlanning.jsx";
 import SavingGoals from "./components/SavingGoals.jsx";
-import "./App.css";
-import { datas, budgets, savings } from "./assets/data/data.js";
+import Footer from "./components/Footer.jsx";
+import { datas, budgets, savingsGoals } from "./assets/data/data.js";
 import expenesArray from "./assets/data/DoughnutDatas.js";
-
+import "./App.css";
 
 function App() {
     function formatCurrency(number) {
@@ -44,7 +44,8 @@ function App() {
                 budgets={budgets}
                 onCurrencyFormat={formatCurrency}
             />
-            <SavingGoals savings={savings} />
+            <SavingGoals savings={savingsGoals} />
+            <Footer />
         </>
     );
 }

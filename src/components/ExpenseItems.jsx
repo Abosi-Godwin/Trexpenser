@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ListItem from "./Utilities/ListItem.jsx";
 import ListItemsForm from "./Utilities/ListItemsForm.jsx";
@@ -37,7 +37,12 @@ export default function Expenses({ expenseItems, onCurrencyFormat }) {
         );
         setDataToDelete("");
     }
-
+    useEffect(
+        function () {
+            setExpenses([...expenseItems].reverse());
+        },
+        [expenseItems]
+    );
     return (
         <div className="flex flex-col gap-2 pb-5">
             <ListItemsForm />

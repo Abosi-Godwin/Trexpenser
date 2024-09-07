@@ -4,9 +4,8 @@ import Button from "./Inputs/Button.jsx";
 import DateInput from "./Inputs/DateInput.jsx";
 import Categories from "./Inputs/Categories.jsx";
 import { Toaster, toast } from "alert";
-
+import inputChangerFunction from "./Libs/InputChangerFunction.js";
 function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
-
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];
         setCurrentDate(currentDate);
@@ -18,6 +17,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
     const [endDate, setEndDate] = useState("");
     const [currentDate, setCurrentDate] = useState("");
     const inputValue = event => event.target.value;
+
     function handleCategoryChange(e) {
         setBudgetCategory(inputValue(e));
     }
@@ -30,6 +30,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
     function handleEndDateChange(e) {
         setEndDate(inputValue(e));
     }
+
     function handleFormCancel(e) {
         e.preventDefault();
     }
@@ -86,30 +87,14 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
             <div>
                 <form>
                     <div className="flex justify-between items-center gap-4">
-                        <div>
-                            <label
-                                htmlFor="filteringType"
-                                className="text-color-2"
-                            >
-                                Select category:
-                            </label>
-                            <br />
-                            <select
-                                name="filteringType"
-                                id="filteringType"
-                                value={budgetCategory}
-                                onChange={handleCategoryChange}
-                                className="bg-color-2
-                text-color-8 border-none outline-none p-2 rounded"
-                            >
-                                <option value="" disabled>
-                                    Select the category
-                                </option>
-                                {budgetCategories.map((option, index) => (
-                                    <Categories option={option} key={index} />
-                                ))}
-                            </select>
-                        </div>
+                      
+                        <Categories
+                            options={budgetCategories}
+                            labelFor="budgetType"
+                            iniValue={budgetCategory}
+                            valueSetter={setBudgetCategory}
+                        />
+
                         <div>
                             <label htmlFor="BudgetAmount">Limit amount:</label>{" "}
                             <br />
@@ -137,7 +122,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
                                     minDate={currentDate}
                                     style="w-full outline-none rounded
                     text-color-8 bg-color-2 p-2"
-                                    onHandleDateChange={handleStartDateChange}
+                                    onHandleInputChange={inputChangerFunction}
                                 />
                             </div>
 
@@ -150,7 +135,7 @@ function BudgetForm({ budgetCategories, allBudgets, onFormSubmit }) {
                                     minDate={startDate}
                                     style="w-full outline-none rounded
                     text-color-8 bg-color-2 p-2"
-                                    onHandleDateChange={handleEndDateChange}
+                                    onHandleInputChange={inputChangerFunction}
                                 />
                             </div>
                         </div>

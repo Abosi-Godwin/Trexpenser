@@ -15,7 +15,7 @@ const DateInput = ({
     }, []);
 
     return (
-        <>
+        <div>
             <label htmlFor="date-input">{label}</label>
             <input
                 type="date"
@@ -26,7 +26,7 @@ const DateInput = ({
                 className={style}
                 onChange={e => onHandleInputChange(e.target.value, setDate)}
             />
-        </>
+        </div>
     );
 };
 

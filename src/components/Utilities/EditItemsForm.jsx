@@ -5,6 +5,7 @@ import Button from "./Inputs/Button.jsx";
 import DateInput from "./Inputs/DateInput.jsx";
 import Input from "./Inputs/Input.jsx";
 import Categories from "./Inputs/Categories.jsx";
+import Modal from "./Modal.jsx";
 
 const incomeCategories = [
     "Job",
@@ -84,10 +85,7 @@ function EditItemsForm({ data, onFormHide, onFormEditted }) {
     }
     return (
         openForm && (
-            <div
-                className="w-screen h-screen bg-color-3 fixed top-0 left-0
-            border px-4 flex justify-center items-center"
-            >
+            <Modal>
                 <div
                     className="w-full h-fit flex items-center flex-col
                 justify-center gap-3 bg-color-6 text-color-2 p-2 rounded-md
@@ -165,10 +163,9 @@ function EditItemsForm({ data, onFormHide, onFormEditted }) {
                                             : expenseCategories
                                         ).map((cat, ind) => {
                                             return (
-                                                <Categories
-                                                    key={ind}
-                                                    option={cat}
-                                                />
+                                                <option value={cat} key={ind}>
+                                                    {cat}{" "}
+                                                </option>
                                             );
                                         })}
                                     </select>
@@ -219,7 +216,7 @@ function EditItemsForm({ data, onFormHide, onFormEditted }) {
                         </form>
                     </div>
                 </div>
-            </div>
+            </Modal>
         )
     );
 }

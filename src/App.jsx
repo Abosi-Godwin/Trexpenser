@@ -6,6 +6,7 @@ import Summary from "./components/Summary.jsx";
 import BudgetPlanning from "./components/BudgetPlanning.jsx";
 import SavingGoals from "./components/SavingGoals.jsx";
 import Footer from "./components/Footer.jsx";
+
 import { datas, budgets, savingsGoals } from "./assets/data/data.js";
 import expenesArray from "./assets/data/DoughnutDatas.js";
 import "./App.css";
@@ -24,11 +25,8 @@ function App() {
     }
     return (
         <>
-            <Header
-                data={datas}
-                expenses={expenses}
-                currencyFormater={formatCurrency}
-            />
+            <Header 
+            expenses={expenses} currencyFormater={formatCurrency} />
             <AddExpense expenses={expenses} onFormSubmit={handleFormSubmit} />
             <Expenses
                 expenseItems={[...expenses]}

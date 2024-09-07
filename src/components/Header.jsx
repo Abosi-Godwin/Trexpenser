@@ -1,11 +1,13 @@
 import { FaBars } from "react-icons/fa";
 import { FaArrowTrendUp } from "react-icons/fa6";
 
-function Header({ datas, expenses, currencyFormater }) {
-    const balance = expenses.reduce(
-        (ac, ini) =>
-            ini.type === "income" ? ac + ini.amount : ac - ini.amount,
-        0
+function Header({ expenses, currencyFormater }) {
+    const balance = currencyFormater(
+        expenses.reduce(
+            (ac, ini) =>
+                ini.type === "income" ? ac + ini.amount : ac - ini.amount,
+            0
+        )
     );
     return (
         <div className="flex flex-col gap5-54">
@@ -38,7 +40,7 @@ function Header({ datas, expenses, currencyFormater }) {
                             className="text-4xl
                         font-bold"
                         >
-                            {currencyFormater(balance)}
+                            {balance}
                         </h2>
                         <p className="italic tracking-wider text-sm flex">
                             18% {<FaArrowTrendUp />} increase on income

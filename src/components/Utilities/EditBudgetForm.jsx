@@ -62,9 +62,8 @@ function EditBudgetForm({
         onFormSubmit(budgetData);
         onFormClose();
     }
-    return ( 
-            <Modal>
-              
+    return (
+        <Modal>
             <div
                 className="p-2 bg-color-8 rounded
     text-color-3 w-full md:w-1/2 md:p-4"
@@ -76,34 +75,9 @@ function EditBudgetForm({
                 </div>
                 <div>
                     <form>
+                      
                         <div className="flex justify-between items-center gap-4">
-                            <div>
-                                <label
-                                    htmlFor="budgetCategory"
-                                    className="text-color-2"
-                                >
-                                    Change category:
-                                </label>
-                                <br />
-                                <select
-                                    name="budgetCategory"
-                                    id="budgetCategory"
-                                    value={budgetCategory}
-                                    onChange={handleCategoryChange}
-                                    className="bg-color-2
-                text-color-8 border-none outline-none p-2 rounded"
-                                >
-                                    <option value="" disabled>
-                                        Select the category
-                                    </option>
-                                    {budgetCategories.map((option, index) => (
-                                        <Categories
-                                            option={option}
-                                            key={index}
-                                        />
-                                    ))}
-                                </select>
-                            </div>
+                          <Categories />
                             <div>
                                 <label htmlFor="BudgetAmount">
                                     New amount:

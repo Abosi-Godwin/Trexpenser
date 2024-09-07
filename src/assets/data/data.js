@@ -314,3 +314,33 @@ export const savingsGoals = [
         endDate: "2025-12-01"
     }
 ];
+
+export const incomeCategories = [
+    "Job",
+    "Freelance",
+    "Investments",
+    "Gifts",
+    "Business",
+    "Refunds",
+    "Bonuses",
+    "Other"
+];
+
+export const expenseCategories = [
+    "Food",
+    "Housing",
+    "Utilities",
+    "Transportation",
+    "Health",
+    "Entertainment",
+    "Shopping",
+    "Education",
+    "Insurance",
+    "Savings",
+    "Debt Payments",
+    "Travel",
+    "Office Supplies",
+    "Miscellaneous"
+];
+
+export const expenseTypes = ["income", "expenses"];

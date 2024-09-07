@@ -2,12 +2,13 @@ export default function Input({
     max = "",
     label = "",
     inputType,
+    valueSetter,
     placeholder = "",
     initialValue = "",
-    onHandleInputChange = ""
+    onHandleInputChange
 }) {
     return (
-        <>
+        <div>
             <label htmlFor={label} className=" capitalize">
                 {" "}
                 {label}
@@ -18,12 +19,18 @@ export default function Input({
                 type={inputType}
                 value={initialValue}
                 placeholder={placeholder}
-                onChange={onHandleInputChange}
-                requured="true"
+                onChange={e =>
+                    onHandleInputChange(
+                        inputType === "number"
+                            ? +e.target.value
+                            : e.target.value,
+                        valueSetter
+                    )
+                }
                 className="w-full
                 text-color-8 bg-color-2 border-none outline-none p-2 rounded
                 placeholder:text-color-4"
             />
-        </>
+        </div>
     );
 }

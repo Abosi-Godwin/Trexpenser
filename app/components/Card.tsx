@@ -19,8 +19,8 @@ const CardItem = ({ data, makeFlex = true }: CardItemProps) => {
     >
       <div
         className={`${
-          !makeFlex && "w-14 h-14 bg-temp-color-1 rounded-full flex items-center justify-center"
-        } text-2xl text-temp-color-8`}
+          !makeFlex && "w-14 h-14 bg-temp-color-1 rounded-full flex items-center justify-center pt-0"
+        } text-2xl text-temp-color-8 pt-2`}
       >
         <Icon />
       </div>

@@ -1,25 +1,22 @@
 import MiniLoader from "./MiniLoader";
 
-interface MiniLoaderProps {
+interface ButtonProps {
   text: string;
   className: string;
   loader: boolean;
   disable: boolean;
-  onButtonClick: () => void;
 }
 
 export default function Button({
   text = "add text",
   className = "bg-blue-500 text-white p-2 rounded-md outline-none font-semibold",
   loader,
-  onButtonClick,
   disable = false,
-}) {
+}: ButtonProps) {
   return (
     <button
       className={className}
       disabled={disable}
-      onClick={(event) => onButtonClick(event)}
     >
       {loader ? <MiniLoader /> : text}
     </button>

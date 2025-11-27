@@ -1,19 +1,14 @@
-
-
-//import { motion } from "framer-motion";
 import { benefits } from "../data/assets";
 
 import CardItem from "./Card";
-
-//import { slideUpVariant } from "../services/animationVariants";
 
 const Benefits = () => {
   return (
     <section
       id="benefits"
-      className="bg-light-sectionBackground flex flex-col gap-4 py-10 px-5 myt-10 text-light-text pt-24"
+      className="bg-temp-color-8 flex flex-col gap-4 py-10 px-5 myt-10 text-light-text pt-24"
     >
-      <div>
+      <div className="text-white">
         <h1 className="text-2xl font-bold mb-2 text-color-2">Why Choose Trexpenser?</h1>
         <p className="text-color-3">
           Designed to make your financial journey smoother and more efficient.

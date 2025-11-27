@@ -1,15 +1,12 @@
 import { FaEyeSlash, FaEye } from "react-icons/fa6";
 
-//import { useAuth } from "../../contexts/AuthContext";
 interface InputLabelProps {
   label: string;
-  inputType: string;
-  toggle: () => void;
-  hidePassword: () => void;
+  inputType: "text" | "password" | "email" | "number";
+  toggle?: boolean;
+  hidePassword?: () => void;
 }
-const InputLabel = ({ label, inputType, toggle, hidePassword }) => {
-  //  const { isSigningUp } = useAuth();
-
+const InputLabel = ({ label, inputType, toggle, hidePassword }: InputLabelProps) => {
   return inputType !== "password" ? (
     <label
       htmlFor={label}
@@ -27,7 +24,6 @@ const InputLabel = ({ label, inputType, toggle, hidePassword }) => {
       </label>
       <div
         className="p-2"
-        disabled={false}
         onClick={hidePassword}
       >
         {toggle ? <FaEyeSlash /> : <FaEye />}

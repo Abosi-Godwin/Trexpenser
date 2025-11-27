@@ -29,7 +29,7 @@ const Reviews = async () => {
               <div className="w-16 h-16 rounded-full bg-white">
                 <img
                   src={userImages[index]}
-                  alt={index}
+                  alt={data.name}
                   className="w-full h-full rounded-full
                                     border-2 border-light-dividers p-1"
                 />

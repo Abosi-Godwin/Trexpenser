@@ -4,21 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
-
-//import { slideUpVariant } from "../services/animationVariants";
-//import { useSignUp } from "../../Hooks/useSignUp";
-//import { useGoogleSignUp } from "../../Hooks/useGoogleSignUp";
 
 import Button from "../components/Button";
 import GoogleBtn from "../components/GoogleBtn";
 import Input from "../components/Input";
 
 const Signup = () => {
-  //  const { signUp, isSigningUp } = useSignUp();
-
-  //const { signUpWithGoogle } = useGoogleSignUp();
-
   const {
     register,
     handleSubmit,
@@ -30,14 +21,13 @@ const Signup = () => {
   const handleHidePassword = () => {
     setHidePassword((prev) => !prev);
   };
-
-  const submitFunc = (userInputs) => {
-    alert({...userInputs})
-    //signUp({ ...userInputs });
+  
+  const submitFunc = () => {
+  
   };
 
   const handleGoogleAut = () => {
-    //  signUpWithGoogle();
+  
   };
 
   return (
@@ -58,11 +48,6 @@ const Signup = () => {
               disable={false}
               placeholder="Enter your username..."
               className="p-3 rounded-md outline-0 border"
-              register={register}
-              error={errors}
-              rules={{
-                required: "Username can't be empty",
-              }}
             />
 
             <Input
@@ -70,12 +55,6 @@ const Signup = () => {
               placeholder="Enter your email..."
               label="email"
               className="p-3 rounded-md outline-0 border"
-              disable={false}
-              register={register}
-              error={errors}
-              rules={{
-                required: "Email is required",
-              }}
             />
 
             <Input
@@ -84,15 +63,6 @@ const Signup = () => {
               label="password"
               className="p-3 rounded-md outline-0 border"
               disable={false}
-              register={register}
-              error={errors}
-              rules={{
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters",
-                },
-              }}
               onHidePassword={handleHidePassword}
               toggle={hidePassword}
             />
@@ -107,7 +77,6 @@ const Signup = () => {
                                 font-extrabold rounded-md p-2 uppercase w-full
                                 hover:bg-light-secondaryAccent"
               disable={false}
-              onButtonClick={handleSubmit}
             />
 
             <div
@@ -143,4 +112,3 @@ const Signup = () => {
   );
 };
 export default Signup;
- 

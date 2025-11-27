@@ -1,5 +1,5 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import { faqs } from "../data/assets";
 
 const Faqs = () => {
@@ -20,8 +20,10 @@ const Faqs = () => {
     </div>
   );
 };
-
-const FaqData = ({ faqData }) => {
+interface FaqDataProps {
+  faqData: {question: string, answer: string};
+}
+const FaqData = ({ faqData }: FaqDataProps) => {
   const [openAns, setOpenAns] = useState(false);
 
   const handleToggle = () => {

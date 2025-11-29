@@ -23,6 +23,7 @@ const LoginPage = () => {
   const handleHidePassword = () => {
     setHidePassword((prev) => !prev);
   };
+
   return (
     <div
       className="bg-light-sectionBackground flex items-center justify-center
@@ -54,9 +55,7 @@ const LoginPage = () => {
             <Button
               text="Login"
               type="submit"
-              className="bg-light-primaryCTA text-white font-extrabold
-                            rounded-md p-2 uppercase w-full flex items-center
-                            justify-center"
+              loading={false}
             />
           </div>
           <div className="flex justify-between py-2">
@@ -87,7 +86,7 @@ const LoginPage = () => {
                             bg-light-dividers"
             ></div>
           </div>
-          <GoogleBtn />
+          <GoogleBtn handleSignUp={handleLogin}/>
           <div className="flex gap-5 items-center">
             <p>Not a member yet?</p>
             <Link

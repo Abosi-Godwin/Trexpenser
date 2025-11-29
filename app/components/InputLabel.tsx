@@ -7,14 +7,7 @@ interface InputLabelProps {
   hidePassword?: () => void;
 }
 const InputLabel = ({ label, inputType, toggle, hidePassword }: InputLabelProps) => {
-  return inputType !== "password" ? (
-    <label
-      htmlFor={label}
-      className="capitalize font-bold"
-    >
-      {label}
-    </label>
-  ) : (
+  return (
     <div className="flex justify-between items-center">
       <label
         htmlFor={label}
@@ -22,12 +15,14 @@ const InputLabel = ({ label, inputType, toggle, hidePassword }: InputLabelProps)
       >
         {label}
       </label>
-      <div
-        className="p-2"
-        onClick={hidePassword}
-      >
-        {toggle ? <FaEyeSlash /> : <FaEye />}
-      </div>
+      {label === "password" && (
+        <div
+          className="p-2"
+          onClick={hidePassword}
+        >
+          {toggle ? <FaEyeSlash /> : <FaEye />}
+        </div>
+      )}
     </div>
   );
 };

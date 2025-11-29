@@ -21,14 +21,12 @@ const Signup = () => {
   const handleHidePassword = () => {
     setHidePassword((prev) => !prev);
   };
-  
-  const submitFunc = () => {
-  
+
+  const submitFunc = (e) => {
+    console.log(e);
   };
 
-  const handleGoogleAut = () => {
-  
-  };
+  const handleGoogleAut = () => {};
 
   return (
     <div
@@ -71,12 +69,8 @@ const Signup = () => {
           <div className="py-2 flex flex-col gap-3">
             <Button
               text="Sign up"
-              loader={false}
-              className="bg-light-primaryCTA text-white flex
-                            items-center justify-center
-                                font-extrabold rounded-md p-2 uppercase w-full
-                                hover:bg-light-secondaryAccent"
-              disable={false}
+              type="submit"
+              loading={false}
             />
 
             <div

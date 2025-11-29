@@ -8,7 +8,7 @@ const Reviews = async () => {
   return (
     <section
       id="reviews"
-      className="bg-light-sectionBackground flex flex-col gap-4 py-10 px-5
+      className="flex flex-col gap-4 py-10 px-5
             pt-24"
     >
       <div>
@@ -19,8 +19,7 @@ const Reviews = async () => {
         {userReviews.map((data, index) => (
           <div
             key={data.id}
-            className="bg-light-cardBackground p-3 rounded-md shadow-md
-                    shadow-color-2"
+            className="bg-temp-color-1 p-3 rounded-md shadow-md shadow-color-2"
           >
             <div className="flex flex-col gap-2 py-3">
               <p className="text-coloxr-1"> {data.review}</p>
@@ -30,8 +29,7 @@ const Reviews = async () => {
                 <img
                   src={userImages[index]}
                   alt={data.name}
-                  className="w-full h-full rounded-full
-                                    border-2 border-light-dividers p-1"
+                  className="w-full h-full rounded-full border-2 border-light-dividers p-1"
                 />
               </div>
               <div>

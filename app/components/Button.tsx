@@ -1,24 +1,17 @@
-import MiniLoader from "./MiniLoader";
-
 interface ButtonProps {
   text: string;
-  className: string;
-  loader: boolean;
-  disable: boolean;
+  type: "submit" | "reset" | "button"
+  loading: boolean;
 }
 
-export default function Button({
-  text = "add text",
-  className = "bg-blue-500 text-white p-2 rounded-md outline-none font-semibold",
-  loader,
-  disable = false,
-}: ButtonProps) {
+export default function Button({ text, type, loading }: ButtonProps) {
   return (
     <button
-      className={className}
-      disabled={disable}
+      type={type}
+      className="bg-light-primaryCTA text-white flex items-center justify-center font-extrabold rounded-md p-2 uppercase w-full hover:bg-light-secondaryAccent"
+      disabled={loading}
     >
-      {loader ? <MiniLoader /> : text}
+      {loading ? "loading" : text}
     </button>
   );
 }

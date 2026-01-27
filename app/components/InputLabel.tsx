@@ -15,12 +15,12 @@ const InputLabel = ({ label, inputType, toggle, hidePassword }: InputLabelProps)
       >
         {label}
       </label>
-      {label === "password" && (
+      {inputType === "password" && (
         <div
           className="p-2"
           onClick={hidePassword}
         >
-          {toggle ? <FaEyeSlash /> : <FaEye />}
+          {inputType ===  "password"  ? <FaEyeSlash /> : <FaEye />}
         </div>
       )}
     </div>

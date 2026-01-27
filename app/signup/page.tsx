@@ -22,8 +22,8 @@ const Signup = () => {
     setHidePassword((prev) => !prev);
   };
 
-  const submitFunc = (e) => {
-    console.log(e);
+  const submitFunc = () => {
+    
   };
 
   const handleGoogleAut = () => {};

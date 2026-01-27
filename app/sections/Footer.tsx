@@ -3,9 +3,9 @@ import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa
 const currentYear = new Date().getFullYear();
 
 function Footer() {
-  const handleEmailSub = () => {
+  /*const handleEmailSub = () => {
     //e.preventDefault();
-  };
+  };*/
   
   return (
     <div className="bg-light-primaryCTA py-10 px-5 text-white">

@@ -1,29 +1,28 @@
 import { FaEyeSlash, FaEye } from "react-icons/fa6";
 
 interface InputLabelProps {
-  label: string;
-  inputType: "text" | "password" | "email" | "number";
-  toggle?: boolean;
-  hidePassword?: () => void;
+    label: string;
+    inputType: "text" | "password" | "email" | "number";
+    toggle?: boolean;
+    hidePassword?: () => void;
 }
-const InputLabel = ({ label, inputType, toggle, hidePassword }: InputLabelProps) => {
-  return (
-    <div className="flex justify-between items-center">
-      <label
-        htmlFor={label}
-        className="capitalize font-bold"
-      >
-        {label}
-      </label>
-      {inputType === "password" && (
-        <div
-          className="p-2"
-          onClick={hidePassword}
-        >
-          {inputType ===  "password"  ? <FaEyeSlash /> : <FaEye />}
+const InputLabel = ({
+    label,
+    inputType,
+    
+    hidePassword
+}: InputLabelProps) => {
+    return (
+        <div className="flex justify-between items-center">
+            <label htmlFor={label} className="capitalize font-bold">
+                {label}
+            </label>
+            {inputType === "password" && (
+                <div className="p-2" onClick={hidePassword}>
+                    {inputType === "password" ? <FaEyeSlash /> : <FaEye />}
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 export default InputLabel;

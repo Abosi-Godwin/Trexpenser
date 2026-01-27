@@ -29,7 +29,6 @@ const Reviews = async () => {
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-full bg-white">
                 <Image src={userImages[index]} alt={data.name} width={500} height={300} className="w-full h-full rounded-full border-2 border-light-dividers p-1" />
-                 
               </div>
               <div>
                 <p className="text-light-text font-bold">

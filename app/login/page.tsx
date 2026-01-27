@@ -10,13 +10,13 @@ import GoogleBtn from "../components/GoogleBtn";
 
 const LoginPage = () => {
   const {
-    register,
+  
     handleSubmit,
-    formState: { errors },
+    
   } = useForm();
 
   const [hidePassword, setHidePassword] = useState(true);
-  const [remember, setRemember] = useState(true);
+  
 
   const handleLogin = () => {};
 

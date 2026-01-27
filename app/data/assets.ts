@@ -2,9 +2,7 @@ import {
   FaChartPie,
   FaPiggyBank,
   FaCoins,
-  FaHouse,
-  FaMoneyBillTransfer,
-  FaUserGear,
+
   FaChartLine,
   FaCalendarCheck,
   FaPersonCircleCheck,
@@ -13,7 +11,7 @@ import {
   FaSackDollar,
   FaChartBar,
   FaUserShield,
-  FaChartSimple,
+  
   FaAccessibleIcon,
 } from "react-icons/fa6";
 

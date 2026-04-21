@@ -28,6 +28,7 @@ export default function Input({
 
       <input
         id={label}
+        name={label}
         type={inputType}
         placeholder={placeholder}
         disabled={disable}

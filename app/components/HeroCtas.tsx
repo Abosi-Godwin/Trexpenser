@@ -11,8 +11,8 @@ const HeroCtas = () => {
             className="w-full flex flex-col items-center justify-center
                 gap-2"
         >
-            <Link
-                href="/signup"
+            <a
+                href="https://trexpenser-dashboard.vercel.app/dashboard"
                 className="font-semibold text-2xl p-4 
             rounded-md text-center font-bold block w-4/5 flex justify-center
             relative bg-light-primaryCTA hover:bg-light-secondaryAccent dark:text-white"
@@ -28,16 +28,16 @@ const HeroCtas = () => {
                             rounded-full bg-white"
                     ></span>
                 </span>
-            </Link>
+            </a>
 
-            <Link
+            <a
                 href="/subscribe"
                 className="font-sm font-bold text-center
                         uppercase underline 
                         "
             >
                 Start free trial
-            </Link>
+            </a>
         </motion.div>
     );
 };

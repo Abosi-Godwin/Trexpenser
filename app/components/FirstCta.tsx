@@ -5,7 +5,6 @@ const FirstCta = () => {
     return (
         <div className="py-10 bg-color-1 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="py-5 px-16">
-              
                 <Image
                     src="/saving_img1.svg"
                     alt="Start saving with us"
@@ -28,13 +27,13 @@ const FirstCta = () => {
                         brighter financial future today.
                     </p>
                 </div>
-                <Link
-                    href="/signup"
+                <a
+                    href="https://trexpenser-dashboard.vercel.app/dashboard"
                     className="bg-light-primaryCTA p-3 rounded-md text-white
                     font-bold uppercase hover:bg-light-secondaryAccent"
                 >
                     Start Saving Free Now
-                </Link>
+                </a>
             </div>
         </div>
     );

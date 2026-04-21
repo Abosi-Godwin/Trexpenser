@@ -1,44 +1,45 @@
 "use client";
-import Link from "next/link";
 
-import { motion } from "framer-motion";
-
-//import { slideUpVariant } from "../services/animationVariants";
+import { motion } from "motion/react";
 
 const HeroCtas = () => {
     return (
-        <motion.div
-            className="w-full flex flex-col items-center justify-center
-                gap-2"
-        >
-            <a
+        <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+            {/* Primary CTA */}
+            <motion.a
                 href="https://trexpenser-dashboard.vercel.app/dashboard"
-                className="font-semibold text-2xl p-4 
-            rounded-md text-center font-bold block w-4/5 flex justify-center
-            relative bg-light-primaryCTA hover:bg-light-secondaryAccent dark:text-white"
+                className="relative w-full sm:w-auto flex items-center justify-center gap-2
+          bg-light-primaryCTA text-white font-bold text-base
+          px-8 py-4 rounded-full overflow-hidden group"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-                Get Started
-                <span className="absolute flex size-4 right-2 top-2">
-                    <span
-                        className="absolute inline-flex h-full w-full
-                            animate-ping rounded-full bg-white opacity-75"
-                    ></span>
-                    <span
-                        className="relative inline-flex size-4
-                            rounded-full bg-white"
-                    ></span>
+                {/* Shimmer effect */}
+                <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+                Get Started Free
+                {/* Ping dot */}
+                <span className="relative flex size-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-60" />
+                    <span className="relative inline-flex size-2.5 rounded-full bg-white" />
                 </span>
-            </a>
+            </motion.a>
 
-            <a
+            {/* Secondary CTA */}
+            <motion.a
                 href="/subscribe"
-                className="font-sm font-bold text-center
-                        uppercase underline 
-                        "
+                className="w-full sm:w-auto flex items-center justify-center
+          border border-light-text/20 hover:border-light-primaryCTA/60
+          text-light-text hover:text-light-primaryCTA
+          font-semibold text-base px-8 py-4 rounded-full
+          transition-colors duration-300"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-                Start free trial
-            </a>
-        </motion.div>
+                Start Free Trial
+            </motion.a>
+        </div>
     );
 };
 

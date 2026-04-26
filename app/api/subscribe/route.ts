@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { supabase } from "../../lib/supabase";
+import { supabase,supabaseUrl } from "../../lib/supabase";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {

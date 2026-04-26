@@ -38,14 +38,14 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-        from: "TrExpenser <hello@yourdomain.com>",
+        from: "Trexpenser@ostiifo.resend.app",
         to: email,
-        subject: "Welcome to TrExpenser 🎉",
+        subject: "Welcome to Trexpenser 🎉",
         html: `
       <h2>You're in!</h2>
-      <p>Thanks for subscribing to TrExpenser.
+      <p>Thanks for subscribing to Trexpenser.
       We'll keep you posted on updates, tips, and new features.</p>
-      <p>— The TrExpenser Team</p>
+      <p>— The Trexpenser Team</p>
     `
     });
 

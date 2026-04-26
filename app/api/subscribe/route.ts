@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
         from: "onboarding@resend.dev",
-        to: "bbnl6060@gmail.com",
+        to: email,
         subject: "Welcome to Trexpenser 🎉",
         html: `
       <h2>You're in!</h2>

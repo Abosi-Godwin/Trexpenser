@@ -34,12 +34,13 @@ export default function Footer() {
     const [sendTips, setSendTips] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
     const handleSubscribe = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email) return;
 
         setLoading(true);
-
+        setError(null);
         const res = await fetch("/api/subscribe", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -64,7 +65,7 @@ export default function Footer() {
                 {/* Brand blurb */}
                 <div>
                     <h2 className="text-2xl font-bold">
-                        TrExpenser: Smart Savings for a Brighter Future.
+                        Trexpenser: Smart Savings for a Brighter Future.
                     </h2>
                     <p className="mt-3 text-white/80">
                         Manage your expenses, set savings goals, and track your
@@ -97,12 +98,6 @@ export default function Footer() {
                              focus:ring-white/50"
                                 />
 
-                                {error && (
-                                    <p className="text-red-400 text-sm">
-                                        {error}
-                                    </p>
-                                )}
-
                                 <button
                                     type="submit"
                                     disabled={loading}
@@ -112,7 +107,9 @@ export default function Footer() {
                                     {loading ? "Subscribing..." : "Subscribe"}
                                 </button>
                             </div>
-
+                            {error && (
+                                <p className="text-red-400 text-sm">{error}</p>
+                            )}
                             <label className="flex cursor-pointer items-start gap-3">
                                 <input
                                     type="checkbox"

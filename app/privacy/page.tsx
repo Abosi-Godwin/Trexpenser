@@ -6,13 +6,13 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
     return (
-        <main className="max-w-4xl mx-auto px-5 py-16 text-gray-800">
+        <main className="max-w-4xl mx-auto px-5 py-24 text-light-text">
             <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
             <p className="text-sm text-gray-500 mb-10">
                 Last updated April 27, 2026
             </p>
 
-            <section className="space-y-8 text-sm leading-7 text-gray-700">
+            <section className="space-y-8 text-sm leading-7 text-light-text">
                 <div>
                     <p>
                         This Privacy Notice for <strong>Trexpenser</strong>{" "}
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3">
+                    <h2 className="text-xl font-bold mb-3">
                         1. What Information Do We Collect?
                     </h2>
                     <p>We collect information you provide directly when you:</p>

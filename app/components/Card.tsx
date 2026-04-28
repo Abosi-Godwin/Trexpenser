@@ -1,3 +1,8 @@
+
+"use client";
+
+import { motion } from "motion/react";
+
 interface CardItemProps {
   data: {
     id: number;
@@ -5,33 +10,35 @@ interface CardItemProps {
     description: string;
     icon: React.ElementType;
   };
-  makeFlex: boolean;
 }
 
-const CardItem = ({ data, makeFlex = true }: CardItemProps) => {
+const CardItem = ({ data }: CardItemProps) => {
   const Icon = data.icon;
+
   return (
-    <div
-      className={`p-3 rounded-md ${
-        makeFlex ? "flex gap-6 bg-temp-color-2" : "block gap-3 bg-temp-color-7"
-      }
-        justify-center`}
+    <motion.div
+      whileHover={{ y: -4, scale: 1.01 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="flex gap-5 p-5 rounded-xl bg-ui-background border 
+        border-brand-200 hover:border-brand-300 hover:shadow-md 
+        hover:shadow-brand-100 transition-shadow duration-300 group"
     >
-      <div
-        className={`${
-          !makeFlex && "w-14 h-14 bg-temp-color-1 rounded-full flex items-center justify-center pt-0"
-        } text-2xl text-temp-color-8 pt-2`}
-      >
-        <Icon />
+      {/* Icon container */}
+      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 
+        group-hover:bg-brand-200 flex items-center justify-center 
+        transition-colors duration-300">
+        <Icon className="text-xl text-ui-icon" />
       </div>
 
-      <div className="flex flex-col gap-2 pt-2">
-        <p className={`font-bold ${makeFlex ? " " : "text-temp-color-1"}`}>
-          <strong>{data.title}</strong>
+      {/* Content */}
+      <div className="flex flex-col gap-1.5">
+        <p className="font-bold text-ui-text">{data.title}</p>
+        <p className="text-sm text-ui-subtext leading-relaxed">
+          {data.description}
         </p>
-        <p className={`${!makeFlex && "text-temp-color-2"}`}> {data.description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
 export default CardItem;

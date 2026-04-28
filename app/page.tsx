@@ -12,8 +12,8 @@ export default function Home() {
     <Main>
       <Hero />
       <Features />
-      <Benefits />
       <FirstCta />
+      <Benefits />
       <Reviews />
       <Faqs />
       <LastCTA />

@@ -21,7 +21,7 @@ const FirstCta = () => {
             <div className="absolute inset-0 bg-brand-100 rounded-full 
               blur-3xl opacity-60 scale-110" />
             <Image
-              src="/Screenshot_20260429-013201.jpg"
+              src="/saving_img1.svg"
               alt="Start saving with Trexpenser"
               width={500}
               height={300}

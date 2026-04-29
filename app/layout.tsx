@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         siteName: "Trexpenser",
         images: [
             {
-                url: "/og-image.png", // place a 1200x630 image in /public
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "TrExpenser — Smart Expense & Budget Tracker"
@@ -69,6 +69,9 @@ export const metadata: Metadata = {
             "max-image-preview": "large",
             "max-snippet": -1
         }
+    },
+    verification: {
+        google: "8wKxFBoxKbThGGJsFMXBoid6P9uWONt00GcfrWKw0BU"
     }
 };
 

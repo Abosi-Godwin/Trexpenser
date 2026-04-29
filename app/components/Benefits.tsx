@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { benefits } from "../data/assets";
-import CardItem from "./Card";
+ 
 
 const Benefits = () => {
   return (
@@ -57,7 +57,7 @@ const Benefits = () => {
 
 export default Benefits;
 
-// Separate card variant for dark background context
+ 
 interface BenefitCardProps {
   data: {
     id: number;

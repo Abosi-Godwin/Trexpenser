@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
+ 
 import Logo from "./Logo";
 
 const navLinks = [
